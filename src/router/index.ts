@@ -7,6 +7,7 @@ import mjlayout from '@/views/mj/layout.vue'
 import sunoLayout from '@/views/suno/layout.vue'
 import lumaLayout from '@/views/luma/layout.vue'
 import multiLayout from '@/views/multi/Layout.vue'
+import testLayout from '@/views/test/Layout.vue'
 //import multiChatLayout from '@/views/multiChat/layout.vue'; // 新增引用
 
 const routes: RouteRecordRaw[] = [
@@ -117,6 +118,20 @@ const routes: RouteRecordRaw[] = [
         path: '/multi/:uuid?',
         name: 'multi',
         component: () => import('@/views/multi/index2.vue'),
+      },
+    ],
+  },
+  // 新增的 test 功能区
+  {
+    path: '/test1',
+    name: 'test',
+    component: testLayout,
+    redirect: '/test/index',
+    children: [
+      {
+        path: '/test/:uuid?',
+        name: 'test',
+        component: () => import('@/views/test/index2.vue'),
       },
     ],
   },

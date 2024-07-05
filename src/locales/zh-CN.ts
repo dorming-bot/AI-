@@ -1,5 +1,7 @@
 //import test from "node:test";
 
+//import test from "node:test";
+
 export default {
   common: {
     add: '添加',
@@ -113,6 +115,7 @@ export default {
     ,gallery:'画廊'
     ,galleryInfo:'我的画廊'
     ,multi:'one in all'
+    ,test:'测试'
   }
   ,mjchat:{
     loading:'正在载入图片'

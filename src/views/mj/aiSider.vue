@@ -133,6 +133,18 @@ const chatId= computed(()=>chatStore.active??'1002' );
                     {{$t('mjtab.multi')}}
                 </n-tooltip>
             </a>
+                          <!-- 新增的 test 功能区按钮 -->
+           <a v-if="!isDisableMenu ( 'test')"  @click="st.active='test'; urouter.push(`/test`)" class=" router-link-exact-active h-12 w-12 cursor-pointer rounded-xl bg-white duration-300 dark:bg-[#34373c] hover:bg-[#bbb] dark:hover:bg-[#555]">
+                <n-tooltip placement="right" trigger="hover">
+                  <template #trigger> 
+                    <div  class="flex h-full justify-center items-center   py-1 flex-col" :class="[goHome=='test' ? 'active' : '']">
+                    <SvgIcon icon="ri:wechat-line" class="text-3xl flex-1"></SvgIcon>
+                     <span class="text-[10px]">{{$t('mjtab.test')}}</span>
+                    </div> 
+                  </template>
+                    {{$t('mjtab.mtest')}}
+                </n-tooltip>
+            </a>
 
       </div>
         <!-- 底部用户信息和设置按钮 -->
