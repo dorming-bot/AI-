@@ -4,7 +4,6 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import { setupPageGuard } from './permission'
 import { ChatLayout } from '@/views/chat/layout'
 import mjlayout from '@/views/mj/layout.vue'
-import MainPage from '@/views/MainPage.vue'
 import sunoLayout from '@/views/suno/layout.vue'
 import lumaLayout from '@/views/luma/layout.vue'
 import multiLayout from '@/views/multi/Layout.vue'
@@ -15,19 +14,6 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Root',
-    component: MainPage,
-    redirect: '/',
-    children: [
-      {
-        path: '/',
-        name: 'MainPage',
-        component: () => import('@/views/MainPage.vue'),
-      },
-    ],
-  },
-  {
-    path: '/chat',
-    name: 'c',
     component: ChatLayout,
     redirect: '/chat',
     children: [
