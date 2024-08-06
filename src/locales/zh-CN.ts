@@ -103,7 +103,7 @@ export default {
     server:'服务端'
     ,about:'关于'
     ,model:'模型'
-    ,sysname:'AI'
+    ,sysname:'HKAI'
   }
   
 
@@ -114,8 +114,8 @@ export default {
     ,drawinfo:'AI绘画 Midjourney引擎'
     ,gallery:'画廊'
     ,galleryInfo:'我的画廊'
-    ,multi:'one in all'
-    ,test:'测试'
+    ,multi:'all in one'
+    ,test:'Dify'
   }
   ,mjchat:{
     loading:'正在载入图片'

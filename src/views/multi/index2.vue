@@ -226,7 +226,7 @@ const sendMessage = () => {
       return loadingMessage;
     });
 
-    fetch('http://localhost:3002/chat', {
+    fetch('http://localhost:4100/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -279,7 +279,7 @@ const sendMessage = () => {
 };
 
 onMounted(() => {
-  fetch('http://localhost:3002/models')
+  fetch(`http://localhost:4100/models`)
     .then(response => response.json())
     .then(data => {
       models.value = data.models; // 保存所有模型

@@ -28,7 +28,7 @@ openaiSetting(route.query)
 
 // 根据不同的路由名称执行相应操作
 if (route.name === 'GPTs') { 
-  const model = `gpt-4-gizmo-${route.params.gid.toString()}`
+  const model = `gpt-3.5-${route.params.gid.toString()}`
   gptConfigStore.setMyData({ model })
   ms.success(`GPTs ${t('mj.modleSuccess')}`)
 } else if (route.name === 'Setting') { 

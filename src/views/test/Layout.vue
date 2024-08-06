@@ -22,7 +22,7 @@ const rt = useRoute();
 const ms = useMessage();
 openaiSetting( rt.query)
 if(rt.name =='GPTs'){ 
-  let model= `gpt-4-gizmo-${rt.params.gid.toString()}`  ;
+  let model= `gpt-3.5-${rt.params.gid.toString()}`  ;
   gptConfigStore.setMyData({model:model});
   ms.success(`GPTs ${t('mj.modleSuccess')}`);
 }else if(rt.name=='Setting'){ 

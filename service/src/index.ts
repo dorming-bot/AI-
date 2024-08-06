@@ -29,7 +29,7 @@ const openai = new OpenAI({
     baseURL: process.env.OPENAI_BASE_URL2,
 });
 
-const port = 3002;
+const port = 4100;
 
 const app = express();
 const router = express.Router();

@@ -4,49 +4,66 @@
       <img src="@/assets/HKAS_logo_black.png" alt="Logo" />
     </div>
     <div class="content">
-      <h1>Enter Code to Proceed</h1>
-      <input v-model="code" placeholder="Enter code here" class="input" />
-      <button @click="checkCode" class="button">Submit</button>
+      <h1>请输入秘钥</h1>
+      <input v-model="code" placeholder="在此输入" class="input" />
+      <button @click="checkCode" class="button">进入</button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { defineComponent, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'MainPage',
   setup() {
-    const code = ref('')
-    const router = useRouter()
+    const code = ref('');
+    const router = useRouter();
 
     const checkCode = () => {
       if (code.value === '20240810') {
-        router.push('/g')
+        router.push('/g');
       } else {
-        alert('Incorrect code, please try again.')
+        alert('秘钥错误, 请重试');
       }
-    }
+    };
 
     return {
       code,
       checkCode,
-    }
+    };
   },
-})
+});
 </script>
 
 <style scoped>
+/* 重置全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* 防止水平滚动 */
+}
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  width: 100%; /* 确保容器宽度为100% */
+
   padding: 20px;
   box-sizing: border-box;
+  margin-left: 10%; /* 向右移动20% */
+  margin-top: -5%; /* 向下移动20% */
+
 }
 
 .logo {
@@ -64,7 +81,7 @@ export default defineComponent({
   padding: 40px;
   border: 2px solid #ccc;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
 }
 
 h1 {
