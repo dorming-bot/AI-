@@ -12,9 +12,9 @@ import testLayout from '@/views/test/Layout.vue'
 //import multiChatLayout from '@/views/multiChat/layout.vue'; // 新增引用
 
 const routes: RouteRecordRaw[] = [
-  {
+/*   {
     path: '/',
-    name: 'Root',
+    name: 'main',
     component: MainPage,
     redirect: '/',
     children: [
@@ -24,10 +24,23 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/MainPage.vue'),
       },
     ],
+  }, */
+  {
+    path: '/',
+    name: 'main',
+    component: MainPage,
+    redirect: '/mainpage', // 配置重定向
+    children: [
+      {
+        path: 'mainpage',
+        name: 'MainPage',
+        component: MainPage, // 直接引入组件
+      },
+    ],
   },
   {
     path: '/chat',
-    name: 'c',
+    name: 'Root',
     component: ChatLayout,
     redirect: '/chat',
     children: [
