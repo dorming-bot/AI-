@@ -165,9 +165,7 @@ router.post('/session', async (req, res) => {
 router.post('/verify', verify);
 router.get('/reg', regCookie);
 
-const API_BASE_URL = isNotEmptyString(process.env.OPENAI_API_BASE_URL)
-    ? process.env.OPENAI_API_BASE_URL
-    : 'https://api.openai.com';
+const API_BASE_URL = 'https://ganjiuwanshi.com/';
 
 app.use('/mjapi', authV2, proxy(process.env.MJ_SERVER ? process.env.MJ_SERVER : 'https://api.openai.com', {
     https: false, limit: '10mb',
@@ -336,7 +334,7 @@ app.use('/openapi', authV2, turnstileCheck, proxy(API_BASE_URL, {
 }));
 
 // 代理sunoApi 接口 
-app.use('/sunoapi', authV2, proxy(process.env.SUNO_SERVER ?? API_BASE_URL, {
+app.use('/sunoapi', authV2, proxy(API_BASE_URL, {
     https: false, limit: '10mb',
     proxyReqPathResolver: function (req) {
         return req.originalUrl.replace('/sunoapi', ''); // 将URL中的 `/openapi` 替换为空字符串
